@@ -1,0 +1,43 @@
+<!-- 更新餐厅 -->
+<button bindtap='updatecanting' id='{{detailRes.id}}'>更新餐厅</button>
+<!-- 删除餐厅 -->
+<button bindtap='deletecanting' id='{{detailRes.id}}'>删除餐厅</button>
+
+<view>
+  <!-- 详细信息 -->
+  <view>
+    <view>餐厅ID：{{detailRes.id}}</view>
+    <view>餐厅名：{{detailRes.name}}</view>
+    <view>餐厅电话：{{detailRes.phone}}</view>
+    <image src='{{detailRes.img}}' style='height: 80px;width: 80px;'></image>
+  </view>
+
+</view>
+
+<!-- 关联信息 -->
+<view>
+  <!-- 菜品 -->
+  <block wx:for="{{detailRes.caipin}}" wx:for-item="caipin" wx:key="">
+    <view>菜品ID：{{caipin.id}}</view>
+    <view>菜品名：{{caipin.name}}</view>
+    <view>菜品描述：{{caipin.miaoshu}}</view>
+    <view>菜品图：
+      <image src='{{caipin.img}}' style='height: 80px;width: 80px;'></image>
+    </view>
+  </block>
+
+  <!-- 环境 -->
+  <block wx:for="{{detailRes.huanjing}}" wx:for-item="huanjing" wx:key="">
+    <view>环境ID：{{huanjing.id}}</view>
+    <view>环境描述：{{huanjing.miaoshu}}</view>
+    <view>环境图：
+      <image src='{{huanjing.img}}' style='height: 80px;width: 80px;'></image>
+    </view>
+  </block>
+
+  <!-- 文章 -->
+  <block wx:for="{{detailRes.wenzhang}}" wx:for-item="wenzhang" wx:key="">
+    <view>文章ID：{{wenzhang.id}}</view>
+    <view>文章HTML：{{wenzhang.html}}</view>
+  </block>
+</view>

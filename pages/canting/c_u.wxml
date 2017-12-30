@@ -1,0 +1,139 @@
+<!-- 更新餐厅-->
+<block wx:if="{{state}}">
+  <!-- 餐厅基本信息 -->
+  <view>
+    <view>餐厅ID：{{detailRes.id}}</view>
+
+    <view>
+      餐厅名:
+      <input bindblur='nameInput' value='{{detailRes.name}}'></input>
+    </view>
+
+    <view>
+      电话:
+      <input bindblur='phoneInput' value='{{detailRes.phone}}'></input>
+    </view>
+
+    <view>
+      餐厅头图:
+      <input value='{{detailRes.img}}'></input>
+      <view class='aa'>
+        <image src='{{detailRes.img}}' style='height: 100px;width: 100px;'></image>
+        <button catchtap='uploadImg' class='butt'>上传图片</button>
+        <button catchtap='deleteImg' class='butt'>删除图片</button>
+      </view>
+    </view>
+
+    <button catchtap='updatecanting'>更新餐厅基本信息</button>
+
+  </view>
+
+  <!-- 关联信息 -->
+  <view>
+    <!-- 菜品 -->
+    <view>
+      <block wx:for="{{detailRes.caipin}}" wx:for-item="caipin" wx:key="">
+        <view>菜品ID：{{caipin.id}}</view>
+
+        <view>菜品名：
+          <input bindblur='caipin_nameInput' value='{{caipin.name}}'></input>
+        </view>
+        <view>菜品描述：
+          <input bindblur='caipin_miaoshuInput' value='{{caipin.miaoshu}}'></input>
+        </view>
+        <view class='aa'>菜品图：
+          <image src='{{caipin.img}}' style='height: 80px;width: 80px;'></image>
+          <button catchtap='uploadcaipinImg' class='butt' id='{{caipin.id}}'>上传菜品图</button>
+          <button catchtap='deletecaipinImg' class='butt' id='{{caipin.id}}' data-img='{{caipin.img}}'>删除菜品图</button>
+        </view>
+
+        <button catchtap='updatecaipin' id='{{caipin.id}}'>更新菜品信息</button>
+        <button catchtap='deletecaipin' id='{{caipin.id}}' data-img='{{caipin.img}}'>删除这条菜品</button>
+      </block>
+
+      <button catchtap='createcaipin_state_show'>新增一条菜品</button>
+    </view>
+
+    <!-- 环境 -->
+    <view>
+      <block wx:for="{{detailRes.huanjing}}" wx:for-item="huanjing" wx:key="">
+        <view>环境ID：{{huanjing.id}}</view>
+
+        <view>环境描述：
+          <input bindblur='huanjing_miaoshuInput' value='{{huanjing.miaoshu}}'></input>
+        </view>
+
+        <view class='aa'>环境图：
+          <image src='{{huanjing.img}}' style='height: 80px;width: 80px;'></image>
+          <button catchtap='uploadhuanjingImg' class='butt' id='{{huanjing.id}}'>上传环境图</button>
+          <button catchtap='deletehuanjingImg' class='butt' id='{{huanjing.id}}' data-img='{{huanjing.img}}'>删除环境图</button>
+        </view>
+
+        <button catchtap='updatehuanjing' id='{{huanjing.id}}'>更新环境信息</button>
+        <button catchtap='deletehuanjing' id='{{huanjing.id}}' data-img='{{huanjing.img}}'>删除这条环境</button>
+      </block>
+      <button catchtap='createhuanjing_state_show'>新增一条环境</button>
+    </view>
+
+    <!-- 文章 -->
+    <view>
+      <block wx:for="{{detailRes.wenzhang}}" wx:for-item="wenzhang" wx:key="">
+        <view>文章ID：{{wenzhang.id}}</view>
+        <view>文章HTML：{{wenzhang.html}}</view>
+      </block>
+    </view>
+
+  </view>
+</block>
+
+<!-- 新增餐厅-->
+<block wx:else>
+  <view>
+
+    <view>
+      name:
+      <input bindblur='nameInput'></input>
+    </view>
+
+    <view>
+      phone:
+      <input bindblur='phoneInput'></input>
+    </view>
+
+    <button catchtap='createcanting'>新增</button>
+  </view>
+</block>
+
+
+<!-- -----------------弹出层-新增菜品---------------- -->
+<view wx:if="{{createcaipin_state}}" class='caipin_state'>
+  <view>名称:
+    <input bindblur='caipin_nameInput'></input>
+  </view>
+
+  <view>描述:
+    <input bindblur='caipin_miaoshuInput'></input>
+  </view>
+
+  <view>价格:
+    <input bindblur='caipin_jiageInput'></input>
+  </view>
+
+  <view>规格:
+    <input bindblur='caipin_guigeInput'></input>
+  </view>
+
+  <button catchtap='createcaipin'>确认新增菜品</button>
+</view>
+
+
+
+<!-- -----------------弹出层-新增环境---------------- -->
+<view wx:if="{{createhuanjing_state}}" class='huanjing_state'>
+
+  <view>描述:
+    <input bindblur='huanjing_miaoshuInput'></input>
+  </view>
+
+  <button catchtap='createhuanjing'>确认新增环境</button>
+</view>
