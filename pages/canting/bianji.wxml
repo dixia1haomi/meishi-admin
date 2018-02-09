@@ -1,0 +1,76 @@
+<view>
+
+  <view class='view'>
+    <view>名称: </view>
+    <input value='{{Res.name}}' bindinput='name'></input>
+  </view>
+
+  <view class='view'>
+    <view>描述: </view>
+    <input value='{{Res.miaoshu}}' bindinput='miaoshu'></input>
+  </view>
+
+  <view class='view'>
+    <view>头图: </view>
+    <input value='{{Res.img}}' bindinput='img'></input>
+  </view>
+
+  <view class='view'>
+    <view>电话: </view>
+    <input value='{{Res.phone}}' bindinput='phone'></input>
+  </view>
+
+  <view class='view'>
+    <view>地址: </view>
+    <input value='{{Res.address}}' bindinput='address'></input>
+  </view>
+
+  <view class='view'>
+    <view>经度: </view>
+    <input value='{{Res.longitude}}' bindinput='longitude'></input>
+  </view>
+
+  <view class='view'>
+    <view>纬度: </view>
+    <input value='{{Res.latitude}}' bindinput='latitude'></input>
+  </view>
+
+  <view class='view'>
+    <view>人均: </view>
+    <input value='{{Res.renjun}}' bindinput='renjun'></input>
+  </view>
+
+  <view class='view' catchtap='changjing'>
+    <view>场景: </view>
+    <view>{{params.changjing? changjingList[params.changjing-1].name:changjingList[Res.changjing-1].name}}</view>
+  </view>
+
+  <view class='view' catchtap='caixi'>
+    <view>菜系: </view>
+    <view>{{params.caixi? caixiList[params.caixi-1].name:caixiList[Res.caixi-1].name}}</view>
+  </view>
+
+  <view class='view' catchtap='quyu'>
+    <view>区域: </view>
+    <view>{{params.quyu? quyuList[params.quyu-1].name:quyuList[Res.quyu-1].name}}</view>
+  </view>
+
+  <view class='view'>
+    <view>标签: </view>
+    <input value='{{Res.biaoqian}}' bindinput='biaoqian'></input>
+  </view>
+
+  <view class='view'>
+    <view>顶置: </view>
+    <input value='{{Res.top}}' bindinput='top'></input>
+  </view>
+
+  <button catchtap='update_canting'>更新餐厅</button>
+</view>
+
+<!-- 文章 -->
+<view>
+  <textarea class='textarea' value='{{Res.wenzhang[0].html}}' bindinput='wenzhang' maxlength="-1"></textarea>
+  <button></button>
+  <button catchtap='update_wenzhang'>更新文章</button>
+</view>

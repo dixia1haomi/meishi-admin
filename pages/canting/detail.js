@@ -1,51 +1,102 @@
 import { Api } from '../../utils/Api.js'
+import { Config } from '../../utils/Config.js'
+import { Base } from '../../utils/Base.js'
 
+const base = new Base()
 const api = new Api()
+const app = getApp()
+
+// HTML解析 (* 点击tar再解析还是全部解析?)
+var WxParse = require('../../wxParse/wxParse.js');
+
+// 留言分页变量
+let page = 1
 
 Page({
 
+
   data: {
-    detailRes: {},
+    Res: {},
+    liuyan_Res: [],
+    // Config
+    quyuList: Config.quyu,
+    caixiList: Config.caixi,
+    changjingList: Config.changjing,
+    // 是否显示‘加载更多留言’
+    gengduo: false,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (op) {
-    let id = op.id
-    api.detailCanting({ id: id }, res => { this.setData({ detailRes: res }) })
+    this._load(op.id)
   },
 
-  // 更新餐厅
-  updatecanting(e) {
-    let id = e.currentTarget.id
-    wx.navigateTo({ url: '/pages/canting/c_u?id=' + id })
+  onShow: function () {
+    // 更新后返回就会执行
+    let id = this.data.Res.id
+    id && this._load(id)
   },
 
-  // 删除餐厅
-  // 检查餐厅下关联的菜品，环境，文章是否都删除了 -> （判断长度实现）
-  // 检查餐厅的头图是否删除了
-  deletecanting(e) {
-    let id = e.currentTarget.id
-    let img = this.data.detailRes.img
-    let caipin = this.data.detailRes.caipin
-    let huanjing = this.data.detailRes.huanjing
-    let wenzhang = this.data.detailRes.wenzhang
-    console.log('cai', caipin.length, 'huanjing', huanjing.length, 'wenzhang', wenzhang.length)
-    if (caipin.length !== 0 || huanjing.length !== 0 || wenzhang.length !== 0) {
-      // 还有关联数据，提示
-      wx.showModal({ title: '请先删除餐厅关联的菜品，环境，文章' })
-    } else {
-      // 没有关联数据了，再检查头图是否删除了(*IMG字段是否为空*)
-      if (img.length !== 0) {
-        wx.showModal({ title: '请先删除餐厅头图' })
-      } else {
-        api.deleteCanting({ id: id }, res => {
-          console.log('删除餐厅结果', res)
-          wx.showModal({ title: '餐厅已删除' })
-        })
+  // ---------------------------------------- _load --------------------------------------------
+  // 请求detail数据（接受餐厅ID）
+  _load(id) {
+    // console.log('detail-data', this.data.userLocation, 'appData', app.appData.userLocation)
+
+    api.detailCanting({ id: id }, res => {
+      console.log('detail数据', res)
+      // 只保留时间的年/月/日
+      // for (let i in res.liuyan) { res.liuyan[i].create_time = res.liuyan[i].create_time.slice(0, 10) }
+      // 设置数据
+      this.setData({ Res: res, ResState: true, loading: false }, () => {
+        // 设置导航条
+        wx.setNavigationBarTitle({ title: res.name })
+        // 解析HTML
+        WxParse.wxParse('wenzhang', 'html', res.wenzhang[0].html, this, 0);
+        // 处理留言
+        this._liuyan(id)
+      })
+    })
+  },
+
+
+  // 留言
+  _liuyan(id) {
+    api.listLiuyan({ canting_id: id, page: page }, res => {
+      console.log('liuyan', res)
+      // 没有留言的情况
+      if(res.code == 10002){
+        return
       }
-    }
+
+      this.setData({ liuyan_Res: res }, () => {
+        // 控制是否显示‘加载更多留言’
+        if (res.count > this.data.liuyan_Res.data.length) {
+          this.setData({ gengduo: true })
+        } else {
+          this.setData({ gengduo: false })
+        }
+      })
+    })
+  },
+
+  // 加载更多留言
+  go_Liuyan() {
+    api.listLiuyan({ canting_id: this.data.Res.id, page: ++page }, res => {
+      console.log('++liuyan', res)
+      this.setData({ 'liuyan_Res.data': this.data.liuyan_Res.data.concat(res.data) }, () => {
+        // 控制是否显示‘加载更多留言’
+        if (res.count > this.data.liuyan_Res.data.length) {
+          this.setData({ gengduo: true })
+        } else {
+          this.setData({ gengduo: false })
+        }
+      })
+    })
+  },
+
+  // 编辑
+  go_bianji() {
+    let id = this.data.Res.id
+    wx.navigateTo({ url: '/pages/canting/bianji?id=' + id })
   },
 
 })

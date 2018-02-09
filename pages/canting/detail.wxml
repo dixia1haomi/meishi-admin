@@ -1,43 +1,92 @@
-<!-- 更新餐厅 -->
-<button bindtap='updatecanting' id='{{detailRes.id}}'>更新餐厅</button>
-<!-- 删除餐厅 -->
-<button bindtap='deletecanting' id='{{detailRes.id}}'>删除餐厅</button>
+<!-- // 引入HTML解析模板 -->
+<import src="/wxParse/wxParse.wxml" />
 
-<view>
-  <!-- 详细信息 -->
-  <view>
-    <view>餐厅ID：{{detailRes.id}}</view>
-    <view>餐厅名：{{detailRes.name}}</view>
-    <view>餐厅电话：{{detailRes.phone}}</view>
-    <image src='{{detailRes.img}}' style='height: 80px;width: 80px;'></image>
+<!-- 兼容直接进入detail页的情况，需要请求数据，所以有loading -->
+<!-- <view wx:if="{{loading}}">style="{{'height:'+height+'px;'}}" -->
+<!-- <view wx:if="{{ResState}}" class='base' style="{{blur && 'filter: blur(2px);'}}"> -->
+<!-- <scroll-view style="height:736px;" scroll-y enable-back-to-top bindscrolltoupper="asd" bindscroll="qwe"> -->
+<!-- 头图 -->
+<view class='base1'>
+  <image src='{{Res.img}}' class='base1-img'></image>
+</view>
+
+<view class='base2'>
+  <view class='base2-1'>
+    <view class='base2-1-1'>
+      <view class='base2-1-1-name'>{{Res.name}}</view>
+      <view class='base2-1-1-renjun'>{{Res.renjun}}</view>
+    </view>
+    <view class='base2-1-2'>
+      <text style='color:#808080;font-size:28rpx;margin-right:6rpx;'>{{Res.zan}}</text>
+    </view>
+  </view>
+
+  <view class='base2-2'>{{Res.miaoshu}}</view>
+
+  <view class='base2-3'>
+    <view catchtap=''>
+      <text style='margin-right:6rpx;'>地址:{{Res.address}}</text>
+    </view>
+  </view>
+
+  <view class='base2-4'>电话:{{Res.phone}}</view>
+
+  <view class='base2-5'>
+    <view>
+      <text class='base2-5-biaoqian'>{{quyuList[Res.quyu-1].name}}</text>
+      <text class='base2-5-biaoqian'>{{caixiList[Res.caixi-1].name}}</text>
+      <text class='base2-5-biaoqian'>{{changjingList[Res.changjing-1].name}}</text>
+      <text class='base2-5-biaoqian'>{{Res.biaoqian}}</text>
+    </view>
   </view>
 
 </view>
 
-<!-- 关联信息 -->
-<view>
-  <!-- 菜品 -->
-  <block wx:for="{{detailRes.caipin}}" wx:for-item="caipin" wx:key="">
-    <view>菜品ID：{{caipin.id}}</view>
-    <view>菜品名：{{caipin.name}}</view>
-    <view>菜品描述：{{caipin.miaoshu}}</view>
-    <view>菜品图：
-      <image src='{{caipin.img}}' style='height: 80px;width: 80px;'></image>
-    </view>
-  </block>
-
-  <!-- 环境 -->
-  <block wx:for="{{detailRes.huanjing}}" wx:for-item="huanjing" wx:key="">
-    <view>环境ID：{{huanjing.id}}</view>
-    <view>环境描述：{{huanjing.miaoshu}}</view>
-    <view>环境图：
-      <image src='{{huanjing.img}}' style='height: 80px;width: 80px;'></image>
-    </view>
-  </block>
+<view class='base3'>
+  <!-- tar栏 -->
+  <!-- <view class='base3-tar'>
+      <view class="base3-tar-item" catchtap=''>------ 攻略 ------</view>
+    </view>  -->
 
   <!-- 文章 -->
-  <block wx:for="{{detailRes.wenzhang}}" wx:for-item="wenzhang" wx:key="">
-    <view>文章ID：{{wenzhang.id}}</view>
-    <view>文章HTML：{{wenzhang.html}}</view>
-  </block>
+  <view class='base3-1'>
+    <template is="wxParse" data="{{wxParseData:wenzhang.nodes}}" />
+  </view>
 </view>
+
+<!-- ------------------------------------------留言----------------------------------------------- -->
+<view class='base4'>
+
+  <view class='base4-1'>
+    <view>-------- 精选留言 --------</view>
+  </view>
+
+  <block wx:for="{{liuyan_Res.data}}" wx:key="">
+    <view class='base4-2'>
+
+      <view class='base4-2-1'>
+        <image class='base4-2-1-1' src='{{item.avatar_url}}'></image>
+        <view class='base4-2-1-2'>
+          <view>{{item.nick_name}}</view>
+          <view>{{item.create_time}}</view>
+        </view>
+      </view>
+      <view class='base4-2-2'>{{item.neirong}}</view>
+
+    </view>
+  </block>
+
+  <view wx:if="{{gengduo}}" class='base4-3' catchtap='go_Liuyan'>加载更多-共{{liuyan_Res.count}}条</view>
+  <!-- 留白 -->
+  <view class='base4-liubai'></view>
+
+  <!-- --------------------编辑---------------------- -->
+  <view class='bianji' catchtap='go_bianji'>
+    <view class=''>编辑</view>
+  </view>
+
+</view>
+
+
+
+<!-- </view> -->

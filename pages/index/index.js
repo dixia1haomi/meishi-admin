@@ -1,31 +1,33 @@
 import { Api } from '../../utils/Api.js'
+import { Config } from '../../utils/Config.js'
 
 const api = new Api()
+//获取应用实例
+const app = getApp()
 
 Page({
   data: {
-    cantinglistRes: {},
+    Res: [],
+    quyuList: Config.quyu,
+    caixiList: Config.caixi,
+    changjingList: Config.changjing,
   },
 
   onLoad: function () {
-
-    // canting.listCanting({}, res => {
-    //   console.log('餐厅列表', res.data)
-    //   this.setData({ cantinglistRes: res.data })
-    // })
-    api.listCanting({}, res => { this.setData({ cantinglistRes: res }) })
-
+    this._load()
   },
 
+  _load() {
+    api.listCanting({}, res => {
+      console.log('listCanting', res)
+      this.setData({ Res: res })
+    })
+  },
 
-  // 跳转查看餐厅
-  detailcanting(e) {
+  // GO餐厅详情
+  go_Detail(e) {
     let id = e.currentTarget.id
     wx.navigateTo({ url: '/pages/canting/detail?id=' + id })
   },
-
-  // 跳转新增餐厅
-  createcanting() { wx.navigateTo({ url: '/pages/canting/c_u' }) },
-
 
 })

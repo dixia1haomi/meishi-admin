@@ -1,14 +1,28 @@
 import { Token } from './utils/Token.js'
+// import { Api } from './utils/Api.js'
+// const api = new Api()
 const token = new Token()
+
 
 App({
 
+  // appData: {
+  //   // 地理位置是否授权标识位
+  //   userLocation: false,
+  //   longitude: null,   // 用户经度
+  //   latitude: null,    // 用户纬度
+  // },
+
   onLaunch: function () {
-    // 小程序初始化检查token
     this.wx_checkToken()
   },
 
+  globalData: {
+    userInfo: null
+  },
 
+
+  // ---------------------------------------------------Token-----------------------------------------------------
   // 小程序初始化检查token
   wx_checkToken() {
     let token_key = wx.getStorageSync('token_key')
@@ -16,6 +30,7 @@ App({
     if (!token_key) {
       console.log('我要去获取token')
       this.getToken()   // 获取token
+      // *登陆
     } else {
       // 去服务器检查token
       console.log('我要去检查token')
@@ -26,8 +41,10 @@ App({
   // 去服务器获取token
   getToken() {
     token.getToken(back => {
-      console.log('获取token成功并缓存', back.data.token_key)
-      wx.setStorageSync('token_key', back.data.token_key)
+      console.log('获取token成功并缓存', back)
+      wx.setStorageSync('token_key', back.data.token)
+      // 提示
+      wx.showToast({ title: '登陆成功' })
     })
   },
 
@@ -37,12 +54,13 @@ App({
       // console.log('checkToken', back.data.isValid)
       if (back.data.isValid) {
         console.log('服务器token还有效')
+        // 提示
+        wx.showToast({ title: 'token还有效' })
       } else {
-        console.log('服务器token已失效,重新请求')
+        console.log('服务器token已失效,重新登陆')
         this.getToken()
+        // 登陆
       }
     })
   }
-
-
 })

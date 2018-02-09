@@ -1,19 +1,19 @@
+<!--index.wxml-->
+<!-- <view class="container"> -->
+  <block wx:for="{{Res}}" wx:key="">
 
+    <view class='cell' catchtap='go_Detail' id="{{item.id}}">
+      <image class='list-img' src='{{item.img}}' lazy-load='true'></image>
 
-<view>
-  <!-- 新增餐厅 -->
-  <button bindtap='createcanting'>新增餐厅</button>
-
-  <!-- 餐厅列表 -->
-  <block wx:for="{{cantinglistRes}}" wx:key="">
-    <view class='aa' catchtap='detailcanting' id='{{item.id}}'>
-      <image src='{{item.img}}' style='height: 80px;width: 80px;'></image>
-      <view>
-        <view>餐厅ID：{{item.id}}</view>
-        <view>餐厅名：{{item.name}}</view>
-        <view>电话：{{item.phone}}</view>
+      <view class='list-detail'>
+        <!-- 名字 -->
+        <view class='name'>{{item.name}}----{{item.id}}</view>
+        <!-- 区域 | 距离 | 星级 -->
+        <view class='list-detail-1'>{{quyuList[item.quyu-1].name}} | {{caixiList[item.caixi-1].name}} | 点赞:{{item.zan}}</view>
+        <view class='list-detail-renjun'>{{item.renjun}}</view>
       </view>
-    </view>
-  </block>
 
-</view>
+    </view>
+
+  </block>
+<!-- </view> -->

@@ -1,3 +1,38 @@
-.aa {
-   display: flex; 
+.cell {
+  display: flex;
+  padding: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+
+.list-img {
+  height: 192rpx;
+  width: 256rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.name{
+  font-size: 36rpx;
+}
+.list-detail {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.list-detail-1 {
+  color: #808080;
+  font-size: 30rpx;
+}
+
+.list-detail-renjun {
+  color: tomato;
+}
+
+.list-detail-renjun::before {
+  content: '￥';
+}
+
+.list-detail-renjun::after {
+  content: '/人';
 }

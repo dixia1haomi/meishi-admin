@@ -1,8 +1,9 @@
 {
   "pages":[
+    "pages/login/login",
     "pages/index/index",
-    "pages/canting/c_u",
-    "pages/canting/detail"
+    "pages/canting/detail",
+    "pages/canting/bianji"
   ],
   "window":{
     "backgroundTextStyle":"light",
