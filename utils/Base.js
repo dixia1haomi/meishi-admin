@@ -1,8 +1,8 @@
 import { Config } from './Config.js'
-import { Token } from './Token.js'
+// import { Api } from './Api.js'
 
-const token = new Token()
-
+// const api = new Api()
+const app = getApp()
 
 class Base {
   constructor() {
@@ -61,8 +61,7 @@ class Base {
 
   // 请求接口失败重试
   _refetch(params) {
-    let token = new Token();
-    token.getToken((back) => {
+    app.getToken((back) => {
       this.request(params, true);
     });
   }

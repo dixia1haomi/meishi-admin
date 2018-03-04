@@ -4,62 +4,62 @@
 
     <view class='item'>
       <view>名称:</view>
-      <input name="name" value='{{Res.name}}'></input>
+      <input name="name"></input>
     </view>
 
     <view class='item'>
       <view>描述:</view>
-      <input name="miaoshu" value='{{Res.miaoshu}}'></input>
+      <input name="miaoshu"></input>
     </view>
 
     <view class='item'>
       <view>img:</view>
-      <input name="img" value='{{Res.img}}'></input>
+      <input name="img"></input>
     </view>
 
     <view class='item'>
       <view>map_img:</view>
-      <input name="map_img" value='{{Res.map_img}}'></input>
+      <input name="map_img"></input>
     </view>
 
     <view class='item'>
       <view>电话:</view>
-      <input name="phone" value='{{Res.phone}}'></input>
+      <input name="phone"></input>
     </view>
 
     <view class='item'>
       <view>地址:</view>
-      <input name="address" value='{{Res.address}}'></input>
+      <input name="address"></input>
     </view>
 
     <view class='item'>
       <view>经度:</view>
-      <input name="longitude" value='{{Res.longitude}}'></input>
+      <input name="longitude"></input>
     </view>
 
     <view class='item'>
       <view>纬度:</view>
-      <input name="latitude" value='{{Res.latitude}}'></input>
+      <input name="latitude"></input>
     </view>
 
     <view class='item'>
       <view>人均:</view>
-      <input name="renjun" value='{{Res.renjun}}'></input>
+      <input name="renjun"></input>
     </view>
 
     <view class='item'>
       <view>区域:</view>
-      <input name="quyu" value='{{Res.quyu}}'></input>
+      <input name="quyu"></input>
     </view>
 
     <view class='item'>
       <view>标签:</view>
-      <input name="biaoqian" value='{{Res.biaoqian}}'></input>
+      <input name="biaoqian"></input>
     </view>
 
     <view class='item'>
       <view>顶置:</view>
-      <input name="top" value='{{Res.top}}'></input>
+      <input name="top"></input>
     </view>
 
     <button formType="submit">Submit</button>

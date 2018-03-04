@@ -22,17 +22,17 @@ const rules = {
 
 // 验证字段的提示信息，若不传则调用默认的信息
 const messages = {
-  name: { required: '名称', rangelength: '名称长度在4到10' },
-  miaoshu: { required: '描述', rangelength: '描述长度在4到10' },
-  img: { required: 'img', rangelength: 'img长度在4到10' },
-  map_img: { required: 'map_img', rangelength: 'map_img长度在4到10' },
-  phone: { required: '电话', rangelength: '电话长度在4到10' },
-  address: { required: '地址', rangelength: '地址长度在4到10' },
-  longitude: { required: '经度', rangelength: '经度长度在4到10' },
-  latitude: { required: '纬度', rangelength: '纬度长度在4到10' },
-  renjun: { required: '人均', rangelength: '人均长度在4到10' },
-  quyu: { required: '区域', rangelength: '区域长度在4到10' },
-  top: { required: '顶置', rangelength: '顶置长度在4到10' },
+  name: { required: '名称', rangelength: '长度在4到10' },
+  miaoshu: { required: '描述', rangelength: '长度在4到10' },
+  img: { required: 'img', rangelength: '长度在4到10' },
+  map_img: { required: 'map_img', rangelength: '长度在4到10' },
+  phone: { required: '电话', rangelength: '长度在4到10' },
+  address: { required: '地址', rangelength: '长度在4到10' },
+  longitude: { required: '经度', rangelength: '长度在4到10' },
+  latitude: { required: '纬度', rangelength: '长度在4到10' },
+  renjun: { required: '人均', rangelength: '长度在4到10' },
+  quyu: { required: '区域', rangelength: '长度在4到10' },
+  top: { required: '顶置', rangelength: '长度在4到10' },
 }
 
 const wxValidate = new WxValidate(rules, messages)
@@ -47,16 +47,7 @@ Page({
 
 
   onLoad: function (op) {
-    this._load(op.id)
-  },
 
-  // 请求detail数据（接受餐厅ID）
-  _load(id) {
-    api.detailCanting({ id: id }, res => {
-      console.log('餐厅详情', res)
-      // 设置数据
-      this.setData({ Res: res })
-    })
   },
 
   // 表单提交
@@ -73,27 +64,26 @@ Page({
     }
     console.log('验证通过')
 
-    // 请求更新餐厅
-    this._updateCanting(data)
+    // 请求新增餐厅
+    this._createCanting(data)
   },
 
-
-  // 更新餐厅
-  _updateCanting(data) {
-    let id = this.data.Res.id
-    // 参数中添加ID
-    data.id = id
-    // 请求更新
-    api.updateCanting(data, res => {
-      console.log('更新餐厅', res)
+  // API请求新增餐厅
+  _createCanting(data) {
+    api.createCanting(data, back => {
+      console.log('API请求新增餐厅', back)
       // 新增成功，提示跳转
       wx.showModal({
-        title: '更新成功',
+        title: '新增成功',
         success: function (res) {
-          if (res.confirm) { wx.navigateBack({ delta: 1 }) }
+          if (res.confirm) {
+            console.log('用户点击确定')
+            wx.navigateTo({ url: '/pages/canting/detail?id=' + back.data.id })
+          }
         }
       })
     })
   },
+
 
 })

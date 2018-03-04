@@ -17,6 +17,7 @@ Page({
     this._load()
   },
 
+  // 获取餐厅列表
   _load() {
     api.listCanting({}, res => {
       console.log('listCanting', res)
@@ -28,6 +29,13 @@ Page({
   go_Detail(e) {
     let id = e.currentTarget.id
     wx.navigateTo({ url: '/pages/canting/detail?id=' + id })
+  },
+
+
+  // ------------------------------------------------------------
+  // 去新增餐厅页
+  go_CreateCanting() {
+    wx.navigateTo({ url: '/pages/canting/create' })
   },
 
 })

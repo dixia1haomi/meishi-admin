@@ -1,14 +1,17 @@
 {
-  "pages":[
-    "pages/login/login",
+  "pages": [
     "pages/index/index",
+    "pages/login/login",
     "pages/canting/detail",
-    "pages/canting/bianji"
+    "pages/canting/create",
+    "pages/canting/bianji",
+    "pages/wenzhang/index",
+    "pages/exception/exception"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }
