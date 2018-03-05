@@ -4,62 +4,62 @@
 
     <view class='item'>
       <view>名称:</view>
-      <input name="name"></input>
+      <input class='input' name="name"></input>
     </view>
 
     <view class='item'>
       <view>描述:</view>
-      <input name="miaoshu"></input>
+      <input class='input' name="miaoshu"></input>
     </view>
 
     <view class='item'>
       <view>img:</view>
-      <input name="img"></input>
+      <input class='input' name="img"></input>
     </view>
 
     <view class='item'>
       <view>map_img:</view>
-      <input name="map_img"></input>
+      <input class='input' name="map_img"></input>
     </view>
 
     <view class='item'>
       <view>电话:</view>
-      <input name="phone"></input>
+      <input class='input' name="phone"></input>
     </view>
 
     <view class='item'>
       <view>地址:</view>
-      <input name="address"></input>
+      <input class='input' name="address"></input>
     </view>
 
     <view class='item'>
       <view>经度:</view>
-      <input name="longitude"></input>
+      <input class='input' name="longitude"></input>
     </view>
 
     <view class='item'>
       <view>纬度:</view>
-      <input name="latitude"></input>
+      <input class='input' name="latitude"></input>
     </view>
 
     <view class='item'>
       <view>人均:</view>
-      <input name="renjun"></input>
+      <input class='input' name="renjun"></input>
     </view>
 
     <view class='item'>
       <view>区域:</view>
-      <input name="quyu"></input>
+      <input class='input' name="quyu"></input>
     </view>
 
     <view class='item'>
       <view>标签:</view>
-      <input name="biaoqian"></input>
+      <input class='input' name="biaoqian"></input>
     </view>
 
     <view class='item'>
       <view>顶置:</view>
-      <input name="top"></input>
+      <input class='input' name="top"></input>
     </view>
 
     <button formType="submit">Submit</button>

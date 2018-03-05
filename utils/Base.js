@@ -20,34 +20,24 @@ class Base {
         'token_key': wx.getStorageSync('token_key')
       },
       success(res) {
+        console.log('base', res)
         if (res.statusCode == 200) {
           // 成功
-          params.sCallback && params.sCallback(res.data)
-        } else {
-
-          console.log('Base基类请求失败，statusCode不等于200', res)
-
-          // Token错误 $Code = 10004（获取token重试1次）
-          if (res.data.code == 10004 && !noRefetch) {
+          if (res.data.errorCode == 0) {
+            params.sCallback && params.sCallback(res.data)
+          }
+          // Token类错误，40000
+          else if (res.data.errorCode == 40000 && !noRefetch) {
             that._refetch(params)
           }
-
-          // 数据库错误 $Code = 10002
-          if (res.data.code == 10002) {
-            // wx.navigateTo({ url: '/pages/exception/exception?code=' + 10002 })
-            params.sCallback && params.sCallback(res.data)  // 直接返回再处理
+          // errorCode不等于0，* 错误页并记录日志
+          else {
+            wx.navigateTo({ url: '/pages/exception/exception?code=' + 'errorCode不等于0' })
           }
-
-          // 微信方面错误 $Code = 10003
-          if (res.data.code == 10003) {
-            wx.navigateTo({ url: '/pages/exception/exception?code=' + 10003 })
-          }
-
-          // 服务器未知错误 999
-          if (res.data.code == 999) {
-            wx.navigateTo({ url: '/pages/exception/exception?code=' + 999 })
-          }
-
+        } else {
+          console.log('Base基类请求失败，statusCode不等于200', res)
+          // statusCode不等于200,可能是请求成功，但是出现了错误
+          wx.navigateTo({ url: '/pages/exception/exception?code=' + 'statusCode不等于200' })
         }
 
       },

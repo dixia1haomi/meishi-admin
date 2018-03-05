@@ -68,13 +68,16 @@ Page({
   // -------------------------------------------------- Admin专有 ------------------------------------------------------------------ 
 
   // 去编辑页
-  go_bianji() {
-    let id = this.data.Res.id
-    wx.navigateTo({ url: '/pages/canting/bianji?id=' + id })
+  go_bianji(e) {
+    let canting_id = e.currentTarget.id
+    wx.navigateTo({ url: '/pages/canting/bianji?canting_id=' + canting_id })
   },
 
   // 去文章页
-  go_wenzhang() {
-    wx.navigateTo({ url: '/pages/wenzhang/index'})
+  go_wenzhang(e) {
+    console.log('go_wenzhang',e)
+    let canting_id = e.currentTarget.id
+    let msg = e.currentTarget.dataset.msg
+    wx.navigateTo({ url: '/pages/wenzhang/index?canting_id=' + canting_id + '&msg=' + msg })
   },
 })

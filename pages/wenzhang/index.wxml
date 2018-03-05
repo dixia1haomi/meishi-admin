@@ -1,2 +1,38 @@
-<!--pages/wenzhang/index.wxml-->
-<text>pages/wenzhang/index.wxml</text>
+<!-- 新增文章 -->
+<view wx:if="{{msg == 'create'}}">
+  <!-- name,miaoshu,img,map_img,phone,address,longitude,latitude,renjun,quyu,biaoqian,top -->
+  <view class='title'>新增文章</view>
+
+  <form bindsubmit="createSubmit">
+
+    <view class='item'>
+      <view>HTML:</view>
+      <textarea class='textarea' auto-height maxlength="-1" name="html"></textarea>
+    </view>
+
+    <button formType="submit">Submit</button>
+
+  </form>
+</view>
+
+
+<!-- 更新文章 -->
+<view wx:else>
+
+  <view class='title'>更新文章</view>
+
+  <form bindsubmit="updateSubmit">
+
+    <view class='item'>
+      <view>HTML:</view>
+      <textarea class='textarea' auto-height maxlength="-1" name="html" value='{{html}}'></textarea>
+    </view>
+
+    <button formType="submit">Submit</button>
+
+  </form>
+</view>
+
+
+<!-- 错误提示 -->
+<my-toptips state="{{toptips_kaiguan}}" tipsText="{{toptips_text}}"></my-toptips>

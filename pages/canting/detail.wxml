@@ -52,38 +52,41 @@
 
   <view class='base3'>
 
-    <view class='create-wenzhang' catchtap='go_wenzhang'>新增或更新文章</view>
+    <!-- 新增或更新文章 -->
+    <view wx:if="{{Res.wenzhang == null}}" class='create-wenzhang' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='create'>新增文章</view>
+    <view wx:else class='create-wenzhang ' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='update'>更新文章</view>
+
     <!-- 文章 -->
-    <view class='base3-1'>
+    <view class='base3-1 '>
       <template is="wxParse" data="{{wxParseData:wenzhang.nodes}}" />
     </view>
   </view>
 
   <!-- ------------------------------------------留言----------------------------------------------- -->
-  <view class='base4'>
+  <view class='base4 '>
 
-    <view class='base4-1'>
+    <view class='base4-1 '>
       <view>-------- 精选留言 --------</view>
     </view>
 
     <!-- 遍历limit 5条留言数据 -->
     <view>
       <block wx:for="{{Res.liuyan}}" wx:key="">
-        <view class='base4-2'>
-          <view class='base4-2-1'>
-            <image class='base4-2-1-1' src='{{item.avatar_url}}'></image>
-            <view class='base4-2-1-2'>
+        <view class='base4-2 '>
+          <view class='base4-2-1 '>
+            <image class='base4-2-1-1 ' src='{{item.avatar_url}} '></image>
+            <view class='base4-2-1-2 '>
               <view>{{item.nick_name}}</view>
               <view>{{item.create_time}}</view>
             </view>
           </view>
-          <view class='base4-2-2'>{{item.neirong}}</view>
+          <view class='base4-2-2 '>{{item.neirong}}</view>
         </view>
       </block>
     </view>
 
-    <view wx:if="{{Res.liuyan_count_count > 5 && Res.liuyan.length < Res.liuyan_count_count}}" class='noLiuyan'>
-      <view catchtap='_zaijiagengduo' style='color: steelblue;'>加载更多,还有{{Res.liuyan_count_count - Res.liuyan.length}}条</view>
+    <view wx:if="{{Res.liuyan_count_count > 5 && Res.liuyan.length < Res.liuyan_count_count}}" class='noLiuyan '>
+      <view catchtap='_zaijiagengduo ' style='color: steelblue; '>加载更多,还有{{Res.liuyan_count_count - Res.liuyan.length}}条</view>
     </view>
 
 
@@ -93,9 +96,9 @@
 
   <!-- 返回主页 -->
   <view wx:if="{{goIndex}}">
-    <navigator url="../index/index" open-type='reLaunch'>
-      <view class='goindex'>
-        <view class=''>回主页</view>
+    <navigator url="../index/index" open-type='reLaunch '>
+      <view class='goindex '>
+        <view class=' '>回主页</view>
       </view>
     </navigator>
   </view>
@@ -109,8 +112,8 @@
 
 
 <!-- -------------------------------------------------- Admin专有 --------------------------------------------------------- -->
-<view class='bianji' catchtap='go_bianji'>
-  <view class=''>编辑</view>
+<view class='bianji ' catchtap='go_bianji ' id='{{Res.id}} '>
+  <view class=' '>编辑</view>
 </view>
 
 <!-- </view> -->

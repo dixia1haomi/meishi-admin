@@ -1,2 +1,5 @@
-<!--pages/exception/exception.wxml-->
-<text>pages/exception/exception.wxml</text>
+
+  <view>
+    <view class='msg'>{{msg}}</view>
+    <button catchtap='back'>返回</button>
+  </view>

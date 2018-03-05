@@ -1,5 +1,4 @@
-<!--index.wxml-->
-<!-- <view class="container"> -->
+
 <view>
   <view class='create-canting' catchtap='go_CreateCanting'>{{'有'+Res.length+'条'}} 新增餐厅</view>
 </view>
@@ -18,4 +17,3 @@
 
   </view>
 </block>
-<!-- </view> -->

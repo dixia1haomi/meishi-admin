@@ -123,6 +123,14 @@ class Api extends Base {
   updateWenzhang(data, callback) {
     base.request({ url: 'wenzhang/updatewenzhang', data: data, sCallback: (res) => { callback && callback(res) } })
   }
+
+  createWenzhang(data, callback) {
+    base.request({ url: 'wenzhang/createwenzhang', data: data, sCallback: (res) => { callback && callback(res) } })
+  }
+
+  deleteWenzhang(data, callback) {
+    base.request({ url: 'wenzhang/deletewenzhang', data: data, sCallback: (res) => { callback && callback(res) } })
+  }
 }
 
 export { Api }

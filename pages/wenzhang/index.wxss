@@ -1,1 +1,6 @@
-/* pages/wenzhang/index.wxss */
+.title {
+  text-align: center;
+}
+.textarea{
+  width: 100%;
+}

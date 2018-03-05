@@ -1,66 +1,23 @@
-// pages/exception/exception.js
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    msg: '出现了未知的错误，sorry..'
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+
+  onLoad: function (op) {
+    console.log('exception', op.code)
+    this._load(op.code)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  _load(code) {
+    if (code == 'basefail') { this.setData({ msg: '网络状态不佳,请重试.' }) }
+    if (code == 'statusCode不等于200') { this.setData({ msg: '出现了点问题,200' }) }
+    if (code == 'errorCode不等于0') { this.setData({ msg: '出现了点问题,0' }) }
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
+  // 返回上一页
+  back() { wx.navigateBack({ delta: 1 }) },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
