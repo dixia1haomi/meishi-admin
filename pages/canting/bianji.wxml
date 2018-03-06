@@ -62,9 +62,11 @@
       <input class='input' name="top" value='{{Res.top}}'></input>
     </view>
 
-    <button formType="submit">Submit</button>
+    <button formType="submit">更新餐厅</button>
 
   </form>
+
+  <button catchtap='open_map'>打开地图获取经纬度</button>
 
 </view>
 

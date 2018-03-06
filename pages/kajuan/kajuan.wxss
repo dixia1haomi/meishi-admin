@@ -1,0 +1,56 @@
+.base2 {
+  background-color: #fff;
+  /* margin-top: 40rpx; *//* 加载固定高度最小一条数据的高度 */
+  min-height: 470rpx;
+}
+
+.fuli {
+  text-align: center;
+  padding: 20rpx 0 20rpx 20rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.base2 .item {
+  display: flex;
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.item1 {
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item1 .img {
+  height: 157.5rpx;
+  width: 280rpx;
+}
+
+.item1 .shengyushuliang {
+  background-color: #f2cd20;
+  /* background-color: red;  *//* color: white; */
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.item2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 32rpx;
+}
+
+.item2-title {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.item .tiaojian {
+  /* color: red; *//* font-weight: 700; */
+}

@@ -1,0 +1,65 @@
+<view>
+  <!-- canting_id,img,title,miaoshu,tiaojian,shengyushuliang,quanbushuliang,qixian,state,card_id -->
+
+  <form bindsubmit="updateSubmit">
+
+    <view class='item'>
+      <view>餐厅ID:</view>
+      <input class='input' name="canting_id" value='{{kajuanRes.canting_id}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>img:</view>
+      <input class='input' name="img" value='{{kajuanRes.img}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>title:</view>
+      <input class='input' name="title" value='{{kajuanRes.title}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>描述:</view>
+      <input class='input' name="miaoshu" value='{{kajuanRes.miaoshu}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>条件:</view>
+      <input class='input' name="tiaojian" value='{{kajuanRes.tiaojian}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>剩余数量:</view>
+      <input class='input' name="shengyushuliang" value='{{kajuanRes.shengyushuliang}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>全部数量:</view>
+      <input class='input' name="quanbushuliang" value='{{kajuanRes.quanbushuliang}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>期限:</view>
+      <input class='input' name="qixian" value='{{kajuanRes.qixian}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>卡劵ID:</view>
+      <input class='input' name="card_id" value='{{kajuanRes.card_id}}'></input>
+    </view>
+
+    <view class='item'>
+      <view>状态:</view>
+      <input class='input' name="state" value='{{kajuanRes.state}}'></input>
+    </view>
+
+
+
+    <button formType="submit">更新提交</button>
+
+  </form>
+
+</view>
+
+<!-- 错误提示 -->
+<my-toptips state="{{toptips_kaiguan}}" tipsText="{{toptips_text}}"></my-toptips>

@@ -91,10 +91,21 @@ Page({
       wx.showModal({
         title: '更新成功',
         success: function (res) {
-          if (res.confirm) { wx.navigateBack({ delta: 1 }) }
+          // if (res.confirm) { wx.navigateBack({ delta: 1 }) }
         }
       })
     })
   },
 
+
+  // ---------------------------------------------- 打开地图选择经纬度 -----------------------------------------------
+  open_map() {
+    wx.chooseLocation({
+      success:res=>{
+        console.log('open_map',res)
+        console.log('经度', res.longitude)
+        console.log('纬度', res.latitude)
+      },
+    })
+  },
 })

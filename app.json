@@ -6,6 +6,10 @@
     "pages/canting/create",
     "pages/canting/bianji",
     "pages/wenzhang/index",
+    "pages/kajuan/kajuan",
+    "pages/kajuan/detail",
+    "pages/kajuan/create",
+    "pages/kajuan/update",
     "pages/exception/exception"
   ],
   "window": {
@@ -13,5 +17,21 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#515151",
+    "borderStyle": "white",
+    "backgroundColor": "#e5e5e5",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/kajuan/kajuan",
+        "text": "卡劵"
+      }
+    ]
   }
 }

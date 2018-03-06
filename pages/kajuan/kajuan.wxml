@@ -1,0 +1,22 @@
+<view class='base2'>
+  <view class='fuli'>福利</view>
+
+  <block wx:for="{{kajuanRes}}" wx:key="">
+
+    <view class='item' catchtap='_go_kajuan_detail' id='{{item.id}}'>
+      <view class='item1'>
+        <image class='img' src='{{item.img}}'></image>
+        <view class='shengyushuliang'>剩余 {{item.shengyushuliang}} 张</view>
+      </view>
+
+      <view class='item2'>
+        <view class='item2-title'>{{item.title}}</view>
+        <view>{{item.miaoshu}}</view>
+        <view class='tiaojian'>{{item.tiaojian}}</view>
+      </view>
+    </view>
+
+  </block>
+
+  <button catchtap='go_createKajuan'>新增卡劵</button>
+</view>

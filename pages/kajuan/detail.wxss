@@ -1,0 +1,34 @@
+.base1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.img {
+  height: 421.875rpx;
+  width: 750rpx;
+}
+
+.kajuan {
+  background-color: #fff;
+  /* font-size: 30rpx; */
+  padding: 20rpx;
+  /* 加载固定高度 */
+  min-height: 260rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.kajuan1 {
+  display: flex;
+  justify-content: space-between;
+  height: 62rpx;
+}
+
+.kajuan-miaoshu {
+  height: 42rpx;
+}
+
+.kajuan-shengyushuliang {
+}

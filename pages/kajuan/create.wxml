@@ -1,0 +1,65 @@
+<view>
+  <!-- canting_id,img,title,miaoshu,tiaojian,shengyushuliang,quanbushuliang,qixian,state,card_id -->
+
+  <form bindsubmit="createSubmit">
+
+    <view class='item'>
+      <view>餐厅ID:</view>
+      <input class='input' name="canting_id"></input>
+    </view>
+
+    <view class='item'>
+      <view>img:</view>
+      <input class='input' name="img"></input>
+    </view>
+
+    <view class='item'>
+      <view>title:</view>
+      <input class='input' name="title"></input>
+    </view>
+
+    <view class='item'>
+      <view>描述:</view>
+      <input class='input' name="miaoshu"></input>
+    </view>
+
+    <view class='item'>
+      <view>条件:</view>
+      <input class='input' name="tiaojian"></input>
+    </view>
+
+    <view class='item'>
+      <view>剩余数量:</view>
+      <input class='input' name="shengyushuliang"></input>
+    </view>
+
+    <view class='item'>
+      <view>全部数量:</view>
+      <input class='input' name="quanbushuliang"></input>
+    </view>
+
+    <view class='item'>
+      <view>期限:</view>
+      <input class='input' name="qixian"></input>
+    </view>
+
+    <view class='item'>
+      <view>卡劵ID:</view>
+      <input class='input' name="card_id"></input>
+    </view>
+
+    <view class='item'>
+      <view>状态:</view>
+      <input class='input' name="state"></input>
+    </view>
+
+
+
+    <button formType="submit">新增提交</button>
+
+  </form>
+
+</view>
+
+<!-- 错误提示 -->
+<my-toptips state="{{toptips_kaiguan}}" tipsText="{{toptips_text}}"></my-toptips>

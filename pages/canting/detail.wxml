@@ -53,8 +53,8 @@
   <view class='base3'>
 
     <!-- 新增或更新文章 -->
-    <view wx:if="{{Res.wenzhang == null}}" class='create-wenzhang' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='create'>新增文章</view>
-    <view wx:else class='create-wenzhang ' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='update'>更新文章</view>
+    <view wx:if="{{Res.wenzhang == null}}" class='create-wenzhang' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='create'>新增文章,长度{{Res.wenzhang.html.length}}</view>
+    <view wx:else class='create-wenzhang ' catchtap='go_wenzhang' id='{{Res.id}}' data-msg='update'>更新文章,长度{{Res.wenzhang.html.length}}</view>
 
     <!-- 文章 -->
     <view class='base3-1 '>
@@ -112,8 +112,8 @@
 
 
 <!-- -------------------------------------------------- Admin专有 --------------------------------------------------------- -->
-<view class='bianji ' catchtap='go_bianji ' id='{{Res.id}} '>
-  <view class=' '>编辑</view>
+<view class='bianji' catchtap='go_bianji' id='{{Res.id}}'>
+  <view class=''>编辑</view>
 </view>
 
 <!-- </view> -->

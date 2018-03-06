@@ -1,0 +1,26 @@
+<!-- 卡劵信息 -->
+<view class='base1'>
+  <!-- 头图 -->
+  <image src='{{kajuanRes.img}}' class='img' catchtap='go_Canting_Detail' id='{{kajuanRes.canting_id}}'></image>
+  <!-- 信息 -->
+  <view class='kajuan'>
+
+    <view class='kajuan1'>
+      <view class='kajuan1-title'>{{kajuanRes.title}}</view>
+    </view>
+
+    <!-- 描述 -->
+    <view class='kajuan-miaoshu'>{{kajuanRes.miaoshu}}</view>
+    <!-- 条件 -->
+    <view class='kajuan-tiaojian'>{{kajuanRes.tiaojian}}</view>
+
+    <view class='kajuan-qixian'>
+      <!-- 使用期限 -->
+      <view class=''>有效期 {{kajuanRes.qixian}}</view>
+      <!-- 剩余数量 -->
+      <view class='kajuan-shengyushuliang'>剩余 {{kajuanRes.shengyushuliang}} 张</view>
+    </view>
+  </view>
+</view>
+
+<button catchtap='go_updateKajuan'>更新卡劵</button>

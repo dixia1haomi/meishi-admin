@@ -10,7 +10,7 @@
       <textarea class='textarea' auto-height maxlength="-1" name="html"></textarea>
     </view>
 
-    <button formType="submit">Submit</button>
+    <button formType="submit">提交新增</button>
 
   </form>
 </view>
@@ -28,11 +28,13 @@
       <textarea class='textarea' auto-height maxlength="-1" name="html" value='{{html}}'></textarea>
     </view>
 
-    <button formType="submit">Submit</button>
-
+    <button formType="submit">提交更新</button>
+    
   </form>
+
+  <button catchtap='deleteWenzhang' id='{{wenzhang_id}}'>删除文章</button>
 </view>
 
 
 <!-- 错误提示 -->
-<my-toptips state="{{toptips_kaiguan}}" tipsText="{{toptips_text}}"></my-toptips>
+<!-- <my-toptips state="{{toptips_kaiguan}}" tipsText="{{toptips_text}}"></my-toptips> -->

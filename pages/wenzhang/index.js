@@ -66,7 +66,7 @@ Page({
         success: (res) => {
           if (res.confirm) {
             console.log('用户点击确定')
-            wx.navigateTo({ url: '/pages/canting/detail?id=' + canting_id })
+            wx.redirectTo({ url: '/pages/canting/detail?id=' + canting_id })
           }
         }
       })
@@ -76,7 +76,7 @@ Page({
 
   // 更新提交
   updateSubmit(e) {
-    console.log('更新提交', e.detail.value)
+    console.log('更新提交', e)
     let data = e.detail.value
     data.canting_id = this.data.canting_id
     data.id = this.data.wenzhang_id
@@ -90,10 +90,40 @@ Page({
         success: (res) => {
           if (res.confirm) {
             console.log('用户点击确定')
-            wx.navigateTo({ url: '/pages/canting/detail?id=' + this.data.canting_id })
+            wx.redirectTo({ url: '/pages/canting/detail?id=' + this.data.canting_id })
           }
         }
       })
     })
   },
+
+
+
+  // 删除文章
+  deleteWenzhang(e) {
+    let wenzhang_id = e.currentTarget.id
+    let canting_id = this.data.canting_id
+
+    // 提示是否删除
+    wx.showModal({
+      title: '确定要删除文章?',
+      success: (res) => {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          api.deleteWenzhang({ id: wenzhang_id, canting_id: canting_id }, back => {
+            wx.showModal({
+              title: '删除成功',
+              success: (res) => {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                  wx.redirectTo({ url: '/pages/canting/detail?id=' + canting_id })
+                }
+              }
+            })
+          })
+        }
+      }
+    })
+  },
+
 })

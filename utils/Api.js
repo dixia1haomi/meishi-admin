@@ -105,21 +105,21 @@ class Api extends Base {
   }
 
   // 新增留言
-  createLiuyan(data, callback) {
-    base.request({ url: 'liuyan/create', data: data, sCallback: (res) => { callback && callback(res) } })
-  }
+  // createLiuyan(data, callback) {
+  //   base.request({ url: 'liuyan/create', data: data, sCallback: (res) => { callback && callback(res) } })
+  // }
 
   // 查询我的留言（根据uid-服务器内部获取，page分页,每页20条）
-  myLiuyan(data, callback) {
-    base.request({ url: 'liuyan/myliuyan', data: data, sCallback: (res) => { callback && callback(res) } })
-  }
+  // myLiuyan(data, callback) {
+  //   base.request({ url: 'liuyan/myliuyan', data: data, sCallback: (res) => { callback && callback(res) } })
+  // }
 
   // 删除留言
   deleteLiuyan(data, callback) {
     base.request({ url: 'liuyan/delete', data: data, sCallback: (res) => { callback && callback(res) } })
   }
 
-  // ---------------------------------文章--------------------------
+  // --------------------------------- 文章 --------------------------
   updateWenzhang(data, callback) {
     base.request({ url: 'wenzhang/updatewenzhang', data: data, sCallback: (res) => { callback && callback(res) } })
   }
@@ -130,6 +130,32 @@ class Api extends Base {
 
   deleteWenzhang(data, callback) {
     base.request({ url: 'wenzhang/deletewenzhang', data: data, sCallback: (res) => { callback && callback(res) } })
+  }
+
+  // --------------------------------- 卡劵 --------------------------
+  // 查询优惠商家列表 || 失败返回1,成功返回0
+  selectKajuan(data, callback) {
+    this.request({ url: 'kajuan/select', data: data, sCallback: (res) => { callback && callback(res.data) } })
+  }
+
+  // 查询指定卡劵(客户端卡劵页用，接受卡劵ID)
+  findKajuan(data, callback) {
+    this.request({ url: 'kajuan/find', data: data, sCallback: (res) => { callback && callback(res.data) } })
+  }
+
+  // 新增卡劵
+  createKajuan(data, callback) {
+    this.request({ url: 'kajuan/create', data: data, sCallback: (res) => { callback && callback(res.data) } })
+  }
+
+  // 更新卡劵
+  updateKajuan(data, callback) {
+    this.request({ url: 'kajuan/update', data: data, sCallback: (res) => { callback && callback(res.data) } })
+  }
+
+  // 删除卡劵
+  deleteKajuan(data, callback) {
+    this.request({ url: 'kajuan/delete', data: data, sCallback: (res) => { callback && callback(res.data) } })
   }
 }
 
