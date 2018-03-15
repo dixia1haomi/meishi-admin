@@ -1,5 +1,142 @@
+<view>
+  <view class='msg'>{{msg}}</view>
+  <button catchtap='back'>返回</button>
+</view>
 
-  <view>
-    <view class='msg'>{{msg}}</view>
-    <button catchtap='back'>返回</button>
-  </view>
+
+
+
+
+
+
+<!-- <br>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);font-size: 15px;">不小心发现了一个藏得很深的地方，到晚上很多店都关了，看上去有格外的神秘感，于是乎，它在哪？</span>
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="letter-spacing: 1px;text-align: justify;color: rgb(62, 62, 62);font-size: 15px;">进去，你才会发现，活力酒吧。</span>
+</p>
+
+<br>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3G3vgZ2DA5who5LARwO9ybOGW8LbIC0sBtXSSOvCiaicTLLgr8cuH5Wgw/?wx_fmt=jpeg">
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="font-size: 15px;">极简的设计说不上有多专业，但至少舒适二字当之无愧。</span>
+</p>
+
+<br>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3O8SRVC4ZdiaiabOK0hp839bT7icyPSu4d385kkXP2P5R1wET2fHtWoC3A/?wx_fmt=jpeg">
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);letter-spacing: 1px;text-align: justify;font-size: 15px;">细节之处装点着微醺的氛围，用心之处希望能奇袭你枯燥的人生。</span>
+</p>
+
+<br>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3hWj5pzOibH8NtibvWVibicXaZJL6MliaUx6xZAUaxaGp4V6AJT6PkrjPylQ/?wx_fmt=jpeg">
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);font-size: 15px;">总之，不想回家，心情无寄时都应该邀上你的三朋五友，坐在一起，开点揪心的玩笑，消解于酒中。</span>
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="letter-spacing: 1px;text-align: justify;color: rgb(62, 62, 62);font-size: 15px;">十点以后，这里将彻底成为酒精爱好者的归宿。</span>
+</p>
+
+<br>
+
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3coUHk2FtcuRYTFpazTOicwew8LCB6hGdcMIy9hP5uTv119w5PLEOHYw/?wx_fmt=jpeg">
+</p>
+
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3DFOesjqWZ4ZVFANVOInG37VZX7bkSUzf34SJ5Sr4G9Z7YVTTBd269g/?wx_fmt=jpeg">
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="letter-spacing: 1px;text-align: justify;color: rgb(62, 62, 62);font-size: 15px;">之所以关顾酒吧，理由是它更能拉近人与人之间的距离，更大的好处是你醉了，却显得十分得体。</span>
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);letter-spacing: 1px;text-align: justify;font-size: 15px;">而另外一个不好开口的是，来酒吧听那些有趣或无趣的故事也好过在KTV听他们哀嚎，别人唱歌要钱，他们唱歌，要命！</span>
+</p>
+<br>
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);font-size: 15px;">对于恰好是浓情夜的人来说，朦胧的光线和暧昧的调调，再合适不过了。</span>
+</p>
+<br>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3CsCc9bP3PILyDSe2oibZVH41LSDorGQsF4btARJibQvnmoAw8V3t1Sbg/?wx_fmt=jpeg">
+</p>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3JJ9LwbpQcY1uKTFFYkd5De1qC5XlOszEAamyWevac12zoWMGvAtSRQ/?wx_fmt=jpeg">
+</p>
+<br>
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);letter-spacing: 1px;text-align: justify;font-size: 15px;">在这种微醺的气氛中，总有些音乐会触动我那些说不出的心情</span>
+</p>
+<br>
+
+
+<pre accuse="aContent" class="best-text mb-10" style="margin-top: 10px;margin-bottom: 10px;padding: 0px;">
+  <p style="text-indent: 0em;margin-left: 32px;margin-right: 32px;letter-spacing: 0.5px;">
+    <span style="font-size: 15px;">“我知道
+      <br style=";">那些夏天就像青春一样回不来
+      <br style=";">代替梦想的
+      <br style=";">也只能是勉为其难
+      <br style=";">我知道
+      <br style=";">吹过的牛逼也会随青春一笑了之”</span>
+  </p>
+</pre>
+
+<br>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3OIR1Dhd8AZIdlLxuA1Z8aQZLc1nxC1K6MfyrniaDUQ1h0DHko4lU9MQ/?wx_fmt=jpeg">
+</p>
+
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3En0lnPnKETgPnicjxAs430PmBOSojpWby8XKfMJMlfGWaqvTupppehg/?wx_fmt=jpeg">
+</p>
+
+<br>
+
+<p style="padding-right: 0.5em;padding-left: 0.5em;white-space: normal;text-align: justify;letter-spacing: 0.5px;">
+  <span style="color: rgb(62, 62, 62);letter-spacing: 1px;text-align: justify;font-size: 15px;">谁都难免在生活的洪流里溺水，无法自我救赎，但你不要忘记，活力酒吧，渡你上岸。</span>
+</p>
+
+<br>
+<p>
+  <img src="https://mmbiz.qpic.cn/mmbiz_jpg/7nqejTwzfIde2mH70GXjOPW2YLEnEcr3NiasulPmBOnFPibhM5cNXnqibB6icAItTNFM55hZN7mQagib1gxiaTh5DDMQ/?wx_fmt=jpeg">
+</p>
+<br> -->

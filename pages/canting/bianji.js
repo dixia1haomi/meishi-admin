@@ -48,7 +48,8 @@ Page({
 
 
   onLoad: function (op) {
-    this._load(op.id)
+    // console.log('onLoad',op)
+    this._load(op.canting_id)
   },
 
   // 请求detail数据（接受餐厅ID）
